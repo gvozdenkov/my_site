@@ -21,8 +21,18 @@ class Post(models.Model):
     tag = models.ManyToManyField(Tag)
 
     def __str__(self) -> str:
-        return f"{self.title} ({self.date.strftime('%d-%m-%Y')}) -> {self.excerpt[:15]}"
+        return f"{self.title} ({self.date.strftime('%d.%m.%Y')})"
 
     class Meta:
         # для отображения в админке
         verbose_name_plural = "Posts"
+
+class Comment(models.Model):
+    username = models.CharField(max_length=30)
+    usermail = models.EmailField(max_length=50)
+    comment = models.TextField(max_length=500)
+    date = models.DateField(auto_now=True)
+
+    # Many to One зависимость. Много комментов для одного поста. 
+    # Каскадное удаление = если удаляется пост, то удаляются и комменты
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
