@@ -1,13 +1,20 @@
 {% load static %}
 
-<li>
-    <article class="post">
-        <a href="http://">
-            <img src="{{ post.image.url }}" alt="post image">
-            <div class="post__content">
-                <h3>{{ post.title }}</h3>
+<li class="post">
+    <a href="{% url 'post-detail' slug=post.slug %}">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        <div class="post__content">
+            <div>
+                <h3>{{ post.title|title }}</h3>
                 <p>{{ post.excerpt }}</p>
             </div>
-        </a>
-    </article>
+            <div class="tags">
+                <span>Tag_01</span>
+                <span>Tag_02</span>
+            </div>
+            <div class="date">
+                <p>{{ post.date }}</p>
+            </div>
+        </div>
+    </a>
 </li>

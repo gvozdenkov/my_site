@@ -1,0 +1,24 @@
+header {
+    position: static;
+}
+
+#latest-posts {
+    padding: 0;
+    padding-bottom: 50px;
+    /* width: 50%; */
+}
+
+.posts {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 30px;
+}
+
+.posts li {
+    margin: 0;
+}
+
+.post {
+    max-width: none;
+}

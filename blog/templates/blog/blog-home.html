@@ -5,8 +5,8 @@
 
 {% block style %}
 
-    <link rel="stylesheet" href={% static 'css/blog-home.css' %}>
-    <link rel="stylesheet" href={% static 'css/post.css' %}>
+<link rel="stylesheet" href={% static 'css/blog-home.css' %}>
+<link rel="stylesheet" href={% static 'css/post.css' %}>
 
 {% endblock style %}
 
@@ -18,7 +18,7 @@
                 <img src="{% static 'img/avatar.png' %}" alt="avatar">
                 <h1>Welcome to Arty's Blog!</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis ligula eget tincidunt egestas.</p>
-                <a class="orange-link-button" href="http://">All Posts</a>
+                <a class="border-link-button" href="{% url 'all_posts' %}">All Posts</a>
             </div>
         </section>
 
@@ -31,8 +31,4 @@
             </ul>
         </section>
     </main>
-
-    <footer>
-
-    </footer>
 {% endblock content %}

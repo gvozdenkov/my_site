@@ -5,9 +5,9 @@ from . import views
 
 # urls приложения
 urlpatterns = [
-    path('', views.BlogHomeView.as_view(), name="blog-home"),
-    # path('posts', views.posts, name="posts-page"),
+    path('', views.BlogHomeView.as_view(), name="blog_home"),
+    path('posts', views.AllPostsView.as_view(), name="all_posts"),
     
     # slug - любое переменное текстовое значение, например posts/my-first-post
-    # path('posts/<slug:slug>', views.post_detail, name="post-detail-page"),
+    path('posts/<slug:slug>', views.PostDetailView.as_view(), name="post-detail"),
 ]

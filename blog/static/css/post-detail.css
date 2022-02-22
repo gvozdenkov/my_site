@@ -1,0 +1,54 @@
+header {
+    position: static;
+}
+
+#post-header {
+    background-color: blueviolet;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 94%;
+    height: 150px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#post-title-block {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#post-title-block h2 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: #441372;
+    border-radius: 6px;
+    color: #ebebeb;
+    padding: 5px 10px;
+}
+
+#post-img {
+    width: 65%;
+}
+
+#post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease;
+}
+
+#post-img img:hover {
+    transform: scale(1.03);
+}
+
+main {
+    width: 94%;
+    margin: 0 auto;
+}
