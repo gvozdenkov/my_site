@@ -49,4 +49,25 @@
     </form>
 </section>
 
+<section id="comments">
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <article id="comment">
+                    <div>
+                        <p>{{ comment.comment|linebreaks }}</p>
+                        <hr>
+                    </div>
+                    <div id="userdata">
+                        <address><a href="mailto: {{ comment.usermail }}">{{ comment.username }} &nbsp</a></address>
+                        <time>{{ comment.date|date:"d.m.Y" }} at {{ comment.date|date:"H:i" }}</time>
+                    </div>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+
+
 {% endblock content %}

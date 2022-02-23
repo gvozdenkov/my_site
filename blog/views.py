@@ -58,7 +58,9 @@ class PostDetailView(View):
         context = {
             "post": post,
             "post_tags": post.tag.all(),
-            "comment_form": CommentForm()
+            "comment_form": CommentForm(),
+            # используем related_name из модели Comment, чтобы дотянуться до всех комментов к посту
+            "comments": post.comments.all()
         }
         return render(request, "blog/post-detail.html", context)
     
@@ -89,6 +91,9 @@ class PostDetailView(View):
             "post_tags": post.tag.all(),
 
             # тут не CommentForm, чтобы сохранить поля ввода при перезагрузке
-            "comment_form": form
+            "comment_form": form,
+
+            # используем related_name из модели Comment, чтобы дотянуться до всех комментов к посту
+            "comments": post.comments.all()
         }
         return render(request, "blog/post-detail.html", context)

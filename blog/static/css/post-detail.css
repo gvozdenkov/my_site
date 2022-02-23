@@ -52,3 +52,41 @@ main {
     width: 94%;
     margin: 0 auto;
 }
+
+/*======================== COMMENTS ===================*/
+
+#comments ul {
+    margin: 0;
+    padding: 0;
+}
+
+#comments li {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#comment{
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem ;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+
+}
+
+#comment p {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+#userdata {
+    display: flex;
+    justify-content: end;
+}
+
+#userdata time {
+    color: rgba(255, 255, 255, 0.5);
+}

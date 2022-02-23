@@ -31,8 +31,10 @@ class Comment(models.Model):
     username = models.CharField(max_length=30)
     usermail = models.EmailField(max_length=50)
     comment = models.TextField(max_length=500)
-    date = models.DateField(auto_now=True)
+    date = models.DateTimeField(auto_now=True)
 
     # Many to One зависимость. Много комментов для одного поста. 
     # Каскадное удаление = если удаляется пост, то удаляются и комменты
+    # related_name - через него можно дотянуться из объекта Post до всех связанных с ним Comment
+    # related_name как контекст во views.py используем
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
