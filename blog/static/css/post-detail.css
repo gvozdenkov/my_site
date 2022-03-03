@@ -51,6 +51,8 @@ header {
 main {
     width: 94%;
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 /*======================== COMMENTS ===================*/

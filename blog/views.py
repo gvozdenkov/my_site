@@ -60,7 +60,7 @@ class PostDetailView(View):
             "post_tags": post.tag.all(),
             "comment_form": CommentForm(),
             # используем related_name из модели Comment, чтобы дотянуться до всех комментов к посту
-            "comments": post.comments.all()
+            "comments": post.comments.all().order_by("-date")
         }
         return render(request, "blog/post-detail.html", context)
     
@@ -94,6 +94,6 @@ class PostDetailView(View):
             "comment_form": form,
 
             # используем related_name из модели Comment, чтобы дотянуться до всех комментов к посту
-            "comments": post.comments.all()
+            "comments": post.comments.all().order_by("-date")
         }
         return render(request, "blog/post-detail.html", context)

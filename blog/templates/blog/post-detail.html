@@ -33,22 +33,6 @@
     {{ post.content|linebreaks }}
 </main>
 
-<section id="comments-section">
-    <h3>Add comment:</h3>
-    <form id="comment-form" action="{% url 'post-detail' slug=post.slug %}" method="POST">
-        {% csrf_token %}
-        {% for field in comment_form %}
-            <div class="form-control">
-                <!-- рендерим форму по частям .label_tag = label -->
-                {{ field.label_tag }}
-                {{ field }}
-                {{ field.errors }}
-            </div>
-        {% endfor %}
-        <button>Comment</button>
-    </form>
-</section>
-
 <section id="comments">
     <ul>
         {% for comment in comments %}
@@ -68,6 +52,20 @@
     </ul>
 </section>
 
-
+<section id="comments-section">
+    <h3>Add comment:</h3>
+    <form id="comment-form" action="{% url 'post-detail' slug=post.slug %}" method="POST">
+        {% csrf_token %}
+        {% for field in comment_form %}
+            <div class="form-control">
+                <!-- рендерим форму по частям .label_tag = label -->
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+        <button>Comment</button>
+    </form>
+</section>
 
 {% endblock content %}
